@@ -26,7 +26,29 @@ public class MainActivity extends AppCompatActivity {
         final RadioGroup RG=(RadioGroup)findViewById(R.id.radioGroup);
         Button btn = (Button) findViewById(R.id.button);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+	imageView1.setVisibility(View.GONE);
+	imageView2.setVisibility(View.GONE);
+
+	RG.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
+		@Override
+		public void onCheckedChanged(RadioGroup radioGroup, int id ){
+			switch(id){
+				case R.id.radioButton1:{
+					imageView1.setVisibility(View.VISIBLE);
+					imageView2.setVisibility(View.GONE);
+					break;
+				}
+				case R.id.radioButton2:{
+					imageView1.setVisibility(View.VISIBLE);
+					imageView2.setVisibility(View.VISIBLE);
+					break;
+				}
+			
+			}
+		}
+	});
+       
+	btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int  rd;
@@ -37,7 +59,8 @@ public class MainActivity extends AppCompatActivity {
                         rd = random.nextInt(7);
                        //범위 0-6 까지
                         imageView1.setImageResource(imageList[rd]);
-                        break;
+                        imageView2.setVisibility(View.GONE);
+			break;
                     }
 
                     case R.id.radioButton2:// 주사위 2개 굴렸을 때
