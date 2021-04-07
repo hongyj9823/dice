@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     case R.id.radioButton1: //주사위 1개 굴렸을 때
                     {
-                        rd = random.nextInt(7);
+                        rd = random.nextInt(6);
                        //범위 0-6 까지
                         imageView1.setImageResource(imageList[rd]);
                         imageView2.setVisibility(View.GONE);
@@ -65,10 +65,10 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.radioButton2:// 주사위 2개 굴렸을 때
                     {
-                        rd = random.nextInt(7);
+                        rd = random.nextInt(6);
                         //범위 0-6 까지
                         imageView1.setImageResource(imageList[rd]);
-                        rd = random.nextInt(7);
+                        rd = random.nextInt(6);
                         //범위 0-6 까지
                         imageView2.setImageResource(imageList[rd]);
                         break;
